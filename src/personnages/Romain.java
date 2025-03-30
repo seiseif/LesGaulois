@@ -16,13 +16,25 @@ public class Romain {
 	public int getForce() {
 		return force;
 	}
-
+	
+	public void recevoirCoup(int forceCoup) {
+		this.force = this.force - forceCoup;
+		if (this.force<1) {
+			parler("J'abondonne");
+		}
+		else {
+			prendreParole();
+			parler("Aie");
+		}
+	}
+	
+	
 	public void parler(String texte) {
 		System.out.println(prendreParole() + "\"" + texte + "\"");
 	}
 
 	private String prendreParole() {
-		return "Le romain " + nom + " : ";
+		return "Le Romain " + nom + " : ";
 	}
 
 }

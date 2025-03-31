@@ -13,11 +13,9 @@ public class Romain {
 		return nom;
 	}
 	
-	public int getForce() {
-		return force;
-	}
 	
 	public void recevoirCoup(int forceCoup) {
+		assert forceCoup > 0;
 		this.force = this.force - forceCoup;
 		if (this.force<1) {
 			parler("J'abondonne");
@@ -36,5 +34,9 @@ public class Romain {
 	private String prendreParole() {
 		return "Le Romain " + nom + " : ";
 	}
-
+	
+	public static void main(String[]  args) {
+		Romain minus = new Romain("Minus", -6);
+		minus.parler("Hey");
+	}
 }
